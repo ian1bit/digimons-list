@@ -1,0 +1,163 @@
+/* reset */
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+
+
+body {
+  background: rgb(248, 248, 248);
+}
+
+main {
+  width: 100%;
+}
+
+main ul {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+}
+
+main ul li {
+  display: flex;
+  max-width: 350px;
+  padding: 10px;
+  margin: 10px;
+
+  background: #fff;
+  box-shadow: 5px 5px 5px rgba(170, 170, 170, 0.1);
+  border-radius: 10px;
+}
+
+main ul li:hover {
+  animation: bounce .5s linear;
+}
+
+main ul li img {  
+  width: 150px;
+}
+
+main ul li #digimon-info-container {
+  max-height: 150px;
+  margin: auto 0;
+  padding: 0 10px;
+}
+
+main ul li #digimon-info-container .digimon-title {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  font-size: .75rem;
+  word-break: break-all;
+  color: rgb(48, 47, 47);
+}
+
+main ul li #digimon-info-container .type {
+  display: inline-block;
+  font-family: 'DM Mono';
+  font-size: .8rem;
+  color: #fff;
+  margin-top: 10px;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.InTraining, .Training {
+  background: linear-gradient(to bottom right, #52B442, #0e4606);
+}
+
+.Rookie {
+  background: linear-gradient(to bottom right, #636268, #000000);
+}
+
+.Champion {
+  background: linear-gradient(to bottom right, red, yellow);
+}
+
+.Ultimate {
+  background: linear-gradient(to bottom right, #ee0000, #00e1ff);
+}
+
+main ul li #digimon-info-container .type.Fresh {
+  color: #000;
+  background: linear-gradient(to bottom right, #FFFFFF, #D3EEFC);
+}
+
+main ul li #digimon-info-container .type.Mega {
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: linear-gradient(to bottom right, #1F1A17, #92261B);
+}
+
+main ul li #digimon-info-container .type.Armor {
+  color: #fff;
+  background: linear-gradient(to bottom right, #686663, #161616);
+  border-radius: 0 10px 10px 0;
+  padding: 5px;
+}
+
+main ul li #digimon-info-container .type.Armor::after {
+  content: '•';
+}
+
+/* responsive */
+
+@media (max-width: 950px) {
+  main ul {
+    max-width: 750px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 610px) {
+  main ul {
+    max-width: 350px;
+  }
+
+  main ul li {
+    flex-direction: column;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  main ul li #digimon-info-container .digimon-title {
+    font-size: .6rem;
+  }
+
+  main ul li #digimon-info-container .type {
+    font-size: .7rem;
+  }
+
+  main ul li img {  
+    width: 125px;
+  }
+}
+
+@media (max-width: 300px) {
+  main ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* animacao */
+
+@keyframes bounce {
+	20% {
+			transform: translateY(-6px);
+	}
+	40% {
+			transform: translateY(0px);
+	}
+
+	80% {
+			transform: translateY(-2px);
+	}
+	100% {
+			transform: translateY(0);
+	}
+}
